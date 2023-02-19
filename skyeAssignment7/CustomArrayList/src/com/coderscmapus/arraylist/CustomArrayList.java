@@ -2,12 +2,17 @@ package com.coderscmapus.arraylist;
 
 import java.util.Arrays;
 
-public class CustomArrayList<T> implements CustomList<Object> {
+public class CustomArrayList<T> implements CustomList<T> {
     Object[] items = new Object[10];
     int size = 0;
     @Override
     public boolean add(Object item) {
-        return add(size, item);
+        if (items.length == size){
+            grow();
+        }
+        items[size] = item;
+        size+=1;
+        return true;
     }
 
     private void grow(){
@@ -20,9 +25,7 @@ public class CustomArrayList<T> implements CustomList<Object> {
     }
 
     @Override
-    public Object get(int index) throws IndexOutOfBoundsException {
-        if (index >= index){
-        }
+    public T get(int index) {
         return (T) items[index];
     }
 

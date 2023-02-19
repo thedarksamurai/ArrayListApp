@@ -24,7 +24,7 @@ class CustomArrayListTest {
         //act
         int size = sut.getSize();
         //assert
-        assertEquals(size, 12);
+        assertEquals(size, 44);
     }
 
     @Test
@@ -45,9 +45,9 @@ class CustomArrayListTest {
         CustomArrayList<Integer> sut = new CustomArrayList<>();
         populateList(sut);
         //act
-        sut.add(3, 78);
+        sut.add(3, 78000);
         //assert
-        assertEquals(78, sut.get(3));
+        assertEquals(78000, sut.get(3));
     }
 
     @Test
@@ -61,7 +61,7 @@ class CustomArrayListTest {
         assertEquals(yeetSut, 1);
     }
     private void populateList(CustomArrayList<Integer> sut){
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 40; i++){
             sut.add(i);
         }
         sut.add(10);
@@ -70,9 +70,19 @@ class CustomArrayListTest {
         sut.remove(5);
         sut.add(10909009);
         sut.remove(9);
-        sut.add(2, 58);
+        sut.add(2, 598);
         sut.add(5, 678);
         sut.remove(7);
-        sut.add(10);
+        sut.add(140);
+        sut.add(20);
+        sut.add(8, 9000);
+        sut.remove(10);
+        sut.remove(5);
+        sut.add(10909009);
+        sut.remove(9);
+        sut.add(2, 587309045);
+        sut.add(5, 678);
+        sut.remove(7);
+        sut.add(120);
     }
 }
